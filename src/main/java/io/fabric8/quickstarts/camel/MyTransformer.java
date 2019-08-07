@@ -32,7 +32,7 @@ public class MyTransformer {
             char letter = (char) ('0' + number);
             buffer.append(letter);
         }
-        return "Harjeet: Current Buffer is: " + buffer.toString();
+        return "Harjeet Parmar: Current Buffer is: " + buffer.toString();
     }
 
 }
