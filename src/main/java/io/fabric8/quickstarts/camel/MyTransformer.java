@@ -27,7 +27,7 @@ import io.fabric8.quickstarts.camel.jms.MessageSender;
 public class MyTransformer {
 
     public String transform() {
-    	/*
+    	
         // let's return a random string
         StringBuffer buffer = new StringBuffer();
         for (int i = 0; i < 3; i++) {
@@ -36,11 +36,12 @@ public class MyTransformer {
             buffer.append(letter);
         }
         return "Harjeet Parmar: Current Buffer is: " + buffer.toString();
-        */
+        
+        /*
     	MessageSender msgSender = new MessageSender();
     	msgSender.sender();
-    	
     	return "MessageSender invoked.";
+    	*/
     }
 
 }
