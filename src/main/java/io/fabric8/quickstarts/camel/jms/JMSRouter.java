@@ -16,7 +16,7 @@ public class JMSRouter extends RouteBuilder
 
         from("{{input.queue}}").log(LoggingLevel.DEBUG, log, "*********** New message received ***********").process(exchange ->
         		{
-                    String convertedMessage = exchange.getIn().getBody() + " is converted";
+                    String convertedMessage = exchange.getIn().getBody() + " is converted *********** ";
                     exchange.getOut().setBody(convertedMessage);
                 }
         	).to("{{output.queue}}").log(LoggingLevel.DEBUG, log, "*********** Message sent to the other queue ***********").end();
