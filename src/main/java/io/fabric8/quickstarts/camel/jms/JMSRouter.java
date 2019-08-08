@@ -16,10 +16,11 @@ public class JMSRouter extends RouteBuilder
 
         from("{{input.queue}}").log(LoggingLevel.DEBUG, log, "*********** New message received ***********").process(exchange ->
         		{
-        			System.out.println("Configuring route: *********** Exchange: Started ***********");
+        			System.out.println("Exchange: Converting Message: *********** Exchange: Started ***********");
                     String convertedMessage = exchange.getIn().getBody() + " is converted *********** ";
+                    System.out.println("The Converted Message is: " + convertedMessage);
                     exchange.getOut().setBody(convertedMessage);
-                    System.out.println("Configuring route: *********** Exchange: Ended ***********");
+                    System.out.println("Exchange: Converting Message: *********** Exchange: Ended ***********");
                 }
         	).to("{{output.queue}}").log(LoggingLevel.DEBUG, log, "*********** Message sent to the other queue ***********").end();
 
