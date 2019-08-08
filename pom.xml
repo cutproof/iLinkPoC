@@ -17,7 +17,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<spring-boot.version>1.5.13.RELEASE</spring-boot.version>
-		<camel.version>2.21.2</camel.version>
+		<camel.version>2.21.0</camel.version>
 
 		<!-- versions of Maven plugins -->
 		<fabric8.maven.plugin.version>3.5.40</fabric8.maven.plugin.version>
@@ -88,12 +88,7 @@
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-activemq</artifactId>
 		</dependency>
-		
-		<dependency>
-		    <groupId>org.apache.activemq</groupId>
-		    <artifactId>activemq-pool</artifactId>
-		</dependency>
-		
+ 	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-undertow</artifactId>
@@ -102,6 +97,13 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-kahadb-store -->
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-kahadb-store</artifactId>
+			<version>5.11.0</version>
 		</dependency>
 
         <!-- Test -->

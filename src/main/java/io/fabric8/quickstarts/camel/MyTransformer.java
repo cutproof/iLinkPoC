@@ -18,8 +18,6 @@ package io.fabric8.quickstarts.camel;
 
 import org.springframework.stereotype.Component;
 
-import io.fabric8.quickstarts.camel.jms.MessageSender;
-
 /**
  * A sample transform
  */
@@ -36,12 +34,6 @@ public class MyTransformer {
             buffer.append(letter);
         }
         return "Harjeet Parmar: Current Buffer is: " + buffer.toString();
-        
-        /*
-    	MessageSender msgSender = new MessageSender();
-    	msgSender.sender();
-    	return "MessageSender invoked.";
-    	*/
     }
 
 }
