@@ -14,14 +14,14 @@ public class JMSRouter extends RouteBuilder
     {
         System.out.println("Configuring route: *********** OPENSHIFT JMS ROUTE ***********");
 
-        from("ilinkq1").log(LoggingLevel.DEBUG, log, "*********** New message received ***********").process(exchange ->
+        from("{{input.queue}}").log(LoggingLevel.DEBUG, log, "*********** New message received ***********").process(exchange ->
         		{
-        			System.out.println("CAMEL DSL: *********** OPENSHIFT CAMEL DSL: STARTED ***********");
+        			System.out.println("Configuring route: *********** Exchange: Started ***********");
                     String convertedMessage = exchange.getIn().getBody() + " is converted *********** ";
                     exchange.getOut().setBody(convertedMessage);
-                    System.out.println("CAMEL DSL: *********** OPENSHIFT CAMEL DSL: ENDED ***********");
+                    System.out.println("Configuring route: *********** Exchange: Ended ***********");
                 }
-        	).to("ilinkq2").log(LoggingLevel.DEBUG, log, "*********** Message sent to the other queue ***********").end();
+        	).to("{{output.queue}}").log(LoggingLevel.DEBUG, log, "*********** Message sent to the other queue ***********").end();
 
     }
 }
